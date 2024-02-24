@@ -1,10 +1,65 @@
+import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/route_manager.dart';
 
-class SplashViewBody extends StatelessWidget {
+import 'sliding_text.dart';
+
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
   @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+
+  late Animation<double> curvedAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    initCurvedAnimation();
+    navigateToHome();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset(AssetsData.kLogoImage),
+        const SizedBox(
+          height: 8,
+        ),
+        SlidingText(slidingAnimation: curvedAnimation),
+      ],
+    );
+  }
+
+  void initCurvedAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2))
+          ..forward();
+    curvedAnimation =
+        CurvedAnimation(parent: animationController, curve: Curves.bounceInOut);
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.downToUp, duration: kTransitionDuration);
+    });
   }
 }
