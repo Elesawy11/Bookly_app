@@ -1,8 +1,10 @@
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/spacing.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'best_seller_list_view_item.dart';
 import 'custom_app_bar.dart';
 import 'custom_list_view.dart';
 
@@ -17,47 +19,21 @@ class HomeViewBody extends StatelessWidget {
         children: [
           const CustomAppBar(),
           const CustomListView(),
-          verticalSpace(24),
+          verticalSpace(50),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.w),
-            child: Text(
-              'Best Seller',
-              style: Styles.textStyle18,
-            ),
-          ),
-          BestSellerListViewItem(),
-        ],
-      ),
-    );
-  }
-}
-
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 125,
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 2.5 / 4,
-            child: Container(
-              margin: EdgeInsets.only(left: 12.w),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Colors.red,
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(
-                    AssetsData.kTestImage,
-                  ),
+            padding: EdgeInsets.only(left: 30.w, right: 30.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Best Seller',
+                  style: Styles.textStyle18,
                 ),
-              ),
+                verticalSpace(20),
+                const BestSellerListViewItem(),
+              ],
             ),
           ),
-          Column()
         ],
       ),
     );

@@ -20,9 +20,9 @@ abstract class Styles {
   );
 
   static TextStyle textStyle20 = TextStyle(
-      fontSize: 20.sp,
-      fontWeight: FontWeightHelper.regular,
-      fontFamily: kGTSectraFine);
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.regular,
+  );
 
   static TextStyle textStyle30 = TextStyle(
     fontSize: 30.sp,
