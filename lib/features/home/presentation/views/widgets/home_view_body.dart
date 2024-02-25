@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'best_seller_list_view_item.dart';
+import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
 import 'custom_list_view.dart';
 
@@ -14,26 +14,37 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const CustomAppBar(),
-          const CustomListView(),
-          verticalSpace(50),
-          Padding(
-            padding: EdgeInsets.only(left: 30.w, right: 30.w),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Best Seller',
-                  style: Styles.textStyle18,
+                const CustomAppBar(),
+                const CustomListView(),
+                verticalSpace(50),
+                Padding(
+                  padding: EdgeInsets.only(left: 30.w, right: 30.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Best Seller',
+                        style: Styles.textStyle18,
+                      ),
+                      verticalSpace(20),
+                    ],
+                  ),
                 ),
-                verticalSpace(20),
-                const BestSellerListViewItem(),
               ],
             ),
           ),
+          SliverFillRemaining(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
+              child: const BestSellerListView(),
+            ),
+          )
         ],
       ),
     );
