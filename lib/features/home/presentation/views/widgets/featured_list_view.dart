@@ -1,11 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 
-import 'custom_list_view_item.dart';
+import 'custom_book_image.dart';
 
-class CustomListView extends StatelessWidget {
-  const CustomListView({super.key});
+class FeaturedListView extends StatelessWidget {
+  const FeaturedListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class CustomListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const FeaturedListViewItem();
+          return const CustomBookImage();
         },
       ),
     );

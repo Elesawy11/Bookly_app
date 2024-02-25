@@ -40,7 +40,7 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-            horizontalSpace(30),
+            sizedBoxSpace(width: 30),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.57,
               child: Expanded(
@@ -54,7 +54,7 @@ class BestSellerListViewItem extends StatelessWidget {
                       style: Styles.textStyle20
                           .copyWith(fontFamily: kGTSectraFine),
                     ),
-                    verticalSpace(3),
+                    sizedBoxSpace(height: 3),
                     Text(
                       'J.K. Rowling',
                       maxLines: 1,
@@ -63,7 +63,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         color: const Color(0xff707070),
                       ),
                     ),
-                    verticalSpace(3),
+                    sizedBoxSpace(height: 3),
                     Row(
                       children: [
                         Text(
