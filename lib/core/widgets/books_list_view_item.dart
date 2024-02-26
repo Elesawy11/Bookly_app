@@ -5,11 +5,11 @@ import 'package:bookly_app/core/utils/spacing.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/utils/font_weight_helper.dart';
-import 'book_rating.dart';
+import '../utils/font_weight_helper.dart';
+import '../../features/home/presentation/views/widgets/book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BooksListViewItem extends StatelessWidget {
+  const BooksListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
