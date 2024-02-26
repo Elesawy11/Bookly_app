@@ -38,7 +38,11 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         sizedBoxSpace(height: 30),
         const BooksAction(),
-       
+
+        Expanded(
+          child: sizedBoxSpace(height: 30),
+        ),
+
       ],
     );
   }

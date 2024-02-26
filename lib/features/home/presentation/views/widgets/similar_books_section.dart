@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/font_weight_helper.dart';
@@ -16,13 +15,12 @@ class SimilarBooksSection extends StatelessWidget {
       children: [
         Text(
           'You can also like',
-          style:
-              Styles.textStyle14.copyWith(fontWeight: FontWeightHelper.bold),
+          style: Styles.textStyle14.copyWith(fontWeight: FontWeightHelper.bold),
           textAlign: TextAlign.right,
         ),
         sizedBoxSpace(height: 16),
         const SimilarBooksListView(),
-        sizedBoxSpace(height: 30),
+        
       ],
     );
   }
