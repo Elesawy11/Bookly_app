@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'best_seller_list_view_item.dart';
+import '../../../../../core/widgets/books_list_view_item.dart';
 
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({super.key});
@@ -14,7 +14,7 @@ class BestSellerListView extends StatelessWidget {
         scrollDirection: Axis.vertical,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BestSellerListViewItem();
+          return const BooksListViewItem();
         },
       ),
     );
