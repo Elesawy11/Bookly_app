@@ -1,6 +1,6 @@
-import 'package:bookly_app/core/utils/font_weight_helper.dart';
 import 'package:bookly_app/core/utils/spacing.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,6 +27,7 @@ class BookDetailsViewBody extends StatelessWidget {
               'The Jungle Book',
               style: Styles.textStyle30,
             ),
+            sizedBoxSpace(height: 6),
             Text(
               'Rudyard Kipling',
               style: Styles.textStyle18.copyWith(
@@ -34,6 +35,10 @@ class BookDetailsViewBody extends StatelessWidget {
                 fontStyle: FontStyle.italic,
               ),
             ),
+            sizedBoxSpace(height: 16),
+            const BookRating(
+              mainAxisAlignment: MainAxisAlignment.center,
+            )
           ],
         ),
       ),
