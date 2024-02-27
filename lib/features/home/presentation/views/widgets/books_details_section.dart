@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
@@ -38,11 +37,6 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         sizedBoxSpace(height: 30),
         const BooksAction(),
-
-        Expanded(
-          child: sizedBoxSpace(height: 30),
-        ),
-
       ],
     );
   }

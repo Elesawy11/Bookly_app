@@ -17,8 +17,8 @@ class SlidingText extends StatelessWidget {
             sizeFactor: slidingAnimation,
             axis: Axis.vertical,
             axisAlignment: 5,
-            child:const Center(
-              child:  Text(
+            child: const Center(
+              child: Text(
                 'Read Free Books',
                 textAlign: TextAlign.center,
               ),

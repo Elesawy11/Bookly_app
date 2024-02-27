@@ -6,27 +6,25 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/splash/presentation/views/splash_view.dart';
 
-abstract class AppRouter{
-
- static final router = GoRouter(
-  routes: [
-    GoRoute(
-      path: Routes.splashView,
-      builder: (context, state) => const SplashView(),
-    ),
-    GoRoute(
-      path: Routes.homeView,
-      builder: (context, state) => const HomeView(),
-    ),
-    GoRoute(
-      path: Routes.bookDetailsView,
-      builder: (context, state) => const BookDetailsView(),
-    ),
-    GoRoute(
-      path: Routes.searchView,
-      builder: (context, state) => const SearchView(),
-  ),
-  ],
-);
-
+abstract class AppRouter {
+  static final router = GoRouter(
+    routes: [
+      GoRoute(
+        path: Routes.splashView,
+        builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: Routes.homeView,
+        builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: Routes.bookDetailsView,
+        builder: (context, state) => const BookDetailsView(),
+      ),
+      GoRoute(
+        path: Routes.searchView,
+        builder: (context, state) => const SearchView(),
+      ),
+    ],
+  );
 }
