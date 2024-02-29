@@ -12,7 +12,8 @@ class SearchListView extends StatelessWidget {
       scrollDirection: Axis.vertical,
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const BooksListViewItem();
+        // return const BooksListViewItem();
+        return Text('hello');
       },
     );
   }

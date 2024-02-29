@@ -13,6 +13,7 @@ class HomeViewUpperSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        sizedBoxSpace(height: 24),
         const CustomAppBar(),
         const FeaturedListView(),
         sizedBoxSpace(height: 50),
@@ -22,7 +23,7 @@ class HomeViewUpperSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Best Seller',
+                'Newest Books:',
                 style: Styles.textStyle18,
               ),
               sizedBoxSpace(height: 20),

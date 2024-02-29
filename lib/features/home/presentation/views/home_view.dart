@@ -9,6 +9,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
+        bottom: true,
+        top: false,
         child: HomeViewBody(),
       ),
     );
