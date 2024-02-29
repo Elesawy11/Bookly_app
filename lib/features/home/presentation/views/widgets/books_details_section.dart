@@ -16,7 +16,9 @@ class BooksDetailsSection extends StatelessWidget {
         sizedBoxSpace(height: 24),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 85.w),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl: 'https://img.freepik.com/free-photo/creative-composition-world-book-day_23-2148883765.jpg',
+          ),
         ),
         sizedBoxSpace(height: 30),
         Text(

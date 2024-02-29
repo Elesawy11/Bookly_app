@@ -14,7 +14,9 @@ class SimilarBooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.only(left: 5),
-            child: CustomBookImage(),
+            child: CustomBookImage(
+              imageUrl: 'https://img.freepik.com/free-photo/creative-composition-world-book-day_23-2148883765.jpg',
+            ),
           );
         },
       ),
