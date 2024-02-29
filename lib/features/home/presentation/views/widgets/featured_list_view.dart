@@ -33,7 +33,20 @@ class FeaturedListView extends StatelessWidget {
               )
             : state is FeaturedBooksFailure
                 ? CustomErrorWidget(errMessage: state.errMessage)
-                : const CustomLoadingIndecator();
+                : SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.26,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return const Padding(
+                          padding: EdgeInsets.only(left: 16),
+                          child: CustomLoadingIndecator(),
+                        );
+                      },
+                    ),
+                  );
       },
     );
   }

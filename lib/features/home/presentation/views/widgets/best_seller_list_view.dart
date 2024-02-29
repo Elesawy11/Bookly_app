@@ -27,7 +27,18 @@ class BestSellerListView extends StatelessWidget {
               )
             : state is NewestBooksFailutre
                 ? CustomErrorWidget(errMessage: state.errMessage)
-                : const CustomLoadingIndecator();
+                : ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.zero,
+                    scrollDirection: Axis.vertical,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const Padding(
+                        padding: EdgeInsets.only(bottom: 16),
+                        child: CustomLoadingIndecator(),
+                      );
+                    },
+                  );
       },
     );
   }
