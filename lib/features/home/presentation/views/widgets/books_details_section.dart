@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/spacing.dart';
@@ -7,8 +8,8 @@ import 'books_action.dart';
 import 'custom_book_image.dart';
 
 class BooksDetailsSection extends StatelessWidget {
-  const BooksDetailsSection({super.key});
-
+  const BooksDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,27 +17,30 @@ class BooksDetailsSection extends StatelessWidget {
         sizedBoxSpace(height: 24),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 85.w),
-          child: const CustomBookImage(
-            imageUrl: 'https://img.freepik.com/free-photo/creative-composition-world-book-day_23-2148883765.jpg',
+          child: CustomBookImage(
+            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
           ),
         ),
         sizedBoxSpace(height: 30),
         Text(
-          'The Jungle Book',
+          bookModel.volumeInfo.title!,
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         sizedBoxSpace(height: 6),
         Text(
-          'Rudyard Kipling',
+          bookModel.volumeInfo.authors![0],
           style: Styles.textStyle18.copyWith(
             color: Colors.white.withOpacity(0.7),
             fontStyle: FontStyle.italic,
           ),
         ),
         sizedBoxSpace(height: 12),
-        // const BookRating(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        // ),
+        BookRating(
+          count: bookModel.saleInfo?.listPrice?.amount ?? 0,
+          rating: bookModel.volumeInfo.pageCount ?? 0,
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
         sizedBoxSpace(height: 30),
         const BooksAction(),
       ],
