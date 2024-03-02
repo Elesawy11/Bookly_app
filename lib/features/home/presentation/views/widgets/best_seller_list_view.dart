@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
-import 'package:bookly_app/core/widgets/custom_loading_indecator.dart';
+import 'package:bookly_app/core/widgets/main_book_list_view_loading.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_book_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,18 +27,7 @@ class BestSellerListView extends StatelessWidget {
               )
             : state is NewestBooksFailutre
                 ? CustomErrorWidget(errMessage: state.errMessage)
-                : ListView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    padding: EdgeInsets.zero,
-                    scrollDirection: Axis.vertical,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return const Padding(
-                        padding: EdgeInsets.only(bottom: 16),
-                        child: CustomLoadingIndecator(),
-                      );
-                    },
-                  );
+                : const MainBookListViewLoading();
       },
     );
   }
